@@ -5,6 +5,10 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
+    // From ember-cli-babel.  Defaults at
+    // https://babeljs.io/docs/en/next/babel-preset-env.html#options
+    // use the key 'babel' to configure babel directly.
+    'ember-cli-babel': {}
   });
 
   // Use `app.import` to add additional libraries to the generated
