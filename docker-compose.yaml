@@ -1,0 +1,21 @@
+# For doing local development in Docker
+version: "3"
+services:
+  ember:
+    image: danlynn/ember-cli:latest
+    volumes:
+      - .:/myapp
+      - .bash_history:/root/.bash_history
+      - node_modules:/myapp/node_modules
+    tmpfs:
+      - /myapp/tmp
+    stdin_open: true
+    tty: true
+    entrypoint: ["/bin/bash"]
+    ports:
+      - "4200:4200"
+      - "7020:7020"
+      - "7357:7357"
+
+volumes:
+  node_modules:
